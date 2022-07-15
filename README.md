@@ -1,3 +1,106 @@
 # TIL
 
 # 0715
+
+### GIT
+
+[https://subicura.com/git/guide/basic.html#git-init-저장소-만들기](https://subicura.com/git/guide/basic.html#git-init-%E1%84%8C%E1%85%A5%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%89%E1%85%A9-%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%80%E1%85%B5)
+
+- 분산 버전 관리 프로그램
+    - 분산 : 중앙 집중식 버전 관리에 비해 여러 비상 상황(화재 등)에서 파일의 안전성이 높음.
+    - 원격서버 : 깃에서 제공
+    - 로컬 : 프로젝트 참여자의 로컬 데이터베이스
+        
+        ![9927F33F5C403AFD2C.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/27784b21-c6b1-4ff5-838c-7cb37fdf1c62/9927F33F5C403AFD2C.png)
+        
+    - 버전 : 컴퓨터 소프트웨어의 특정 상태
+    - 관리 : 어떤 일의 사무, 시설이나 물건의 유지 개량
+    - 프로그램 : 컴퓨터에서 실핼될 때 특정 작업을 수행하는 일련의 명령어들의 모음
+    - 
+    - 코드의 히스토리(버전)을 관리하는 도구
+    - 개발되어온 과정 파악 가능
+    - 이전 버전과의 변경 사항 비교 및 분석
+
+- 깃, 깃허브
+    - 깃 : 분산 버전 관리 프로그램
+    - 깃허브 : git 기반의 저장소 서비스
+    - 버전 관리를 위해선 깃을 사용해야 함
+
+### Git 기본기
+
+- Repository
+    - 정의 : 특정 디렉토리를 버전관리하는 저장소
+- git init
+    - 깃이 관리하는 폴더로 등록
+    - 숨김항목 표시시 .git 표시됨
+- commit
+    - working directory
+        - 내가 작업중인 실제 디렉토리
+    - staging area
+        - 커밋을 남기고 싶은 특정 버전으로 관리하고 싶은 파일이 있는 곳
+    - repository
+        - 커밋들이 저장되는 곳
+- git 파일 등록 과정
+    - working directory - untracked 파일 : git 이 관리하지 않는 파일
+        - git add
+    - staging area - staged, tracked 파일 : git이 관리하는 파일 (변경사항을 추적 상태), staging area : commit을 원하는 파일들이 대기하는 곳
+        - git commit
+    - repository - committed, tracked 파일 : repository(저장소)에 반영된(올라간)상태
+    - 결론 : untracked파일이 tracked파일이 됨
+        - untracked : git이 관리하지 않는 파일
+        - tracked : git이 관리하는 파일
+
+### Git 명령어
+
+- git init
+    - 로컬 git  저장소를 설정
+- git status
+    - 현재 작업중인 파일의 상태를 확인
+- git add
+    - 현재 상태 추적
+    - 파일의 변경상항을 인덱스(staging area)에 추가합니다.
+    - git은 커밋하기 전, 인덱스에 먼저 커밋할 파일을 추가합니다.
+    - git add .     (전체 add)
+    - git add 파일명    파일명 add
+- git commit
+    - 인덱스에 추가된 변경 사항을 이력에 추가한다.
+    - -m 옵션을 이용하여 첫 번쨰 이력에 대한 메시지 작성
+    - git commit -m “메시지 입력”
+- git push
+    - git에 올리기
+- git pull
+    - git에서 가져오기
+- git log
+    - git 이력 보기
+    - q : git log 실행 멈추는 단축키
+
+### CLI 명령어
+
+- touch : 파일 생성
+- mkdir :  새 폴더
+- ls : 현재 작업 중인 디렉토리의 폴더/파일 목록을 보여줌
+- cd : 현재 작업 중인 디렉토리를 변경하는 명령어
+- start, open : 폴더/파일을 여는 명령어
+- rm : 파일을 삭제하는 명렁어
+- rmdir : 폴더 삭제
+- pwd : 절대경로 확인
+
+### Markdown
+
+- 정의 : 텍스트 기반의 가벼운 마크업 언어 ex)html
+- 문서의 구조와 내용을 같이 쉽고 빠르게 적고자 탄생
+
+### **타이포라**
+
+- [레퍼런스](https://support.typora.io/Markdown-Reference/)
+- 제목은 #의 개수로
+- 리스트는 1. 엔터 or - 엔터
+- 링크는 [string](url)
+- 사진은 ![string](url)
+- 굵게는 ___text___
+- 수평선은 --- 엔터
+- 코드는 `코드~~~`
+- 😄
+- underline
+- *qwd*
+- 🎅
