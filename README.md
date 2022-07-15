@@ -1,7 +1,6 @@
 # TIL
 
 # 0715
-
 ### GIT
 
 [https://subicura.com/git/guide/basic.html#git-init-저장소-만들기](https://subicura.com/git/guide/basic.html#git-init-%E1%84%8C%E1%85%A5%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%89%E1%85%A9-%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%80%E1%85%B5)
@@ -25,6 +24,8 @@
     - 깃 : 분산 버전 관리 프로그램
     - 깃허브 : git 기반의 저장소 서비스
     - 버전 관리를 위해선 깃을 사용해야 함
+
+---
 
 ### Git 기본기
 
@@ -50,12 +51,20 @@
         - untracked : git이 관리하지 않는 파일
         - tracked : git이 관리하는 파일
 
+---
+
 ### Git 명령어
 
 - git init
     - 로컬 git  저장소를 설정
 - git status
     - 현재 작업중인 파일의 상태를 확인
+- git clone
+    - 만들고자 하는 폴더의 깃 배시에서 git clone 깃허브주소
+        
+        ![캡처.PNG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/715a920f-25f4-453d-9e1a-42550f0fc4b4/캡처.png)
+        
+    - 실행시 깃허브 repository와 연동 된 폴더 생성됨
 - git add
     - 현재 상태 추적
     - 파일의 변경상항을 인덱스(staging area)에 추가합니다.
@@ -74,6 +83,8 @@
     - git 이력 보기
     - q : git log 실행 멈추는 단축키
 
+---
+
 ### CLI 명령어
 
 - touch : 파일 생성
@@ -85,10 +96,14 @@
 - rmdir : 폴더 삭제
 - pwd : 절대경로 확인
 
+---
+
 ### Markdown
 
 - 정의 : 텍스트 기반의 가벼운 마크업 언어 ex)html
 - 문서의 구조와 내용을 같이 쉽고 빠르게 적고자 탄생
+
+---
 
 ### **타이포라**
 
