@@ -1,6 +1,6 @@
 ## 자료형
 
-![Data Type.jpg](../image/0715abcde.PNG)
+![Data Type.jpg](../image/220718_data_type.jpg)
 
 - 수치형(Numeric Type)
     - int (정수형, integer)
