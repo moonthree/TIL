@@ -1,9 +1,12 @@
-a = 3
-b = 6
-c = - 5
+list_a = list(map(str, input('입력하세용 : ').split()))
 
-d1 = (-b+(b**2-4*a*c)**0.5)/(2*a)
-d2 = (-b-(b**2-4*a*c)**0.5)/(2*a)
-
-tup_a = (round(d1, 4), round(d2, 4))
-print(tup_a)
+len_a = len(list_a)
+for i in range(len_a-1):
+    if(list_a[i][-1:] == list_a[i+1][:1]):
+        if len_a == i+2:
+            print("pass")
+        else:
+            continue
+    elif(list_a[i][-1:] != list_a[i+1][:1]):
+        print("Fail")
+        break

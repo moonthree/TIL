@@ -1,11 +1,4 @@
-list_a = list(map(str, input('입력하세용 : ').split()))
+steak = 50000
+VAT = int(50000/100*15)
 
-len_a = len(list_a)
-
-for i in range(len_a-1):
-    if(list_a[i][-1:] == list_a[i+1][:1]):
-        print("Pass")
-    else:
-        print("Fail")
-        break
-    
+print(f'스테이크 가격은 {steak}원이고, VAT는 {VAT}원이며 총 금액은 {steak+VAT}원 입니다.')
