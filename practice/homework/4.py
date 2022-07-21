@@ -139,6 +139,7 @@ def g():
     result = defaultdict(list)
     for i in words:
         result[''.join((sorted(list(i))))].append(i)
+        print(result)
     print(result.values()) 
 g()
 # 4-7 end
