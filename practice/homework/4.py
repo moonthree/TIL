@@ -134,12 +134,11 @@ def f():
 
 # 4-7 start
 def g():
+    from collections import defaultdict
     words = ['eat', 'tea', 'tan', 'ate', 'nat', 'bat']
-    a = []
-    for i in range(len(words)):
-        for j in range(len(words)):
-            if sorted(words[i]) == sorted(words[j]):
-                a.append(words[i])
-    print(a)
+    result = defaultdict(list)
+    for i in words:
+        result[''.join((sorted(list(i))))].append(i)
+    print(result.values()) 
 g()
 # 4-7 end
