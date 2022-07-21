@@ -141,7 +141,5 @@ def g():
             if sorted(words[i]) == sorted(words[j]):
                 a.append(words[i])
     print(a)
-        
-
 g()
 # 4-7 end
