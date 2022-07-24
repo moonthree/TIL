@@ -1,6 +1,3 @@
-from tkinter.messagebox import RETRY
-
-
 def menu_count(restorant):
     pass
     # 여기에 코드를 작성합니다.

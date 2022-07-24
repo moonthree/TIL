@@ -55,7 +55,7 @@ def c():
             tmp = i
             answer.append(i)
     print(answer)
-#c()
+c()
 # 4-3 end
 
 # 4-4 start
