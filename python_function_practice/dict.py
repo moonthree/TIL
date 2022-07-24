@@ -72,3 +72,31 @@ def b() :
 # def c() : 사전형 자료구조
 def c():
     dict_c = {'id': 'microfun', 'name': 'song'}
+    a = dict_c['name'] # 키로 값을 불러온다.
+    print(a) # 'song'
+
+    print(type(dict_c))  # <class 'dict'>
+
+    dict_d = {1: 12, 2: 13, 3: 11, 4: 10, 5: 0, 6: 9, 7: 8, 8: [1, 2, 3]}
+    print(dict_d[2]) # 13
+    print(dict_d[1]) # 12
+    print(dict_d[7]) # 8
+    print(dict_d[8]) # [1, 2, 3]
+
+    dict_e = dict(one=1, two=2) # 두 개의 데이터를 한 번에 넣을 수 있다.
+    print(dict_e) # {'one': 1, 'two': 2}
+    print(type(dict_e)) # <class 'dict'>
+
+    dict_f = dict([(1, 'one'), ('two', 2)]) # 리스트에 튜플 형식으로 쌍을 묶으면 사전타입으로 바꿀 수 있다.
+    print(dict_f) # {1: 'one', 'two': 2}
+    print(type(dict_f)) # <class 'dict'>
+#c()
+
+
+# def d() : zip(). 내장 함수의 이용
+def d():
+    dict_d = ['one', 'two', 'three']
+    dict_e = (1, 2, 3)
+    a = dict(zip(dict_d, dict_e)) # 패킹과 같은 효과이다.
+    print(a) # {'one': 1, 'two': 2, 'three': 3}
+d()

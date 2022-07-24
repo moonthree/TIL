@@ -55,7 +55,7 @@ def c():
             tmp = i
             answer.append(i)
     print(answer)
-c()
+#c()
 # 4-3 end
 
 # 4-4 start
@@ -111,7 +111,6 @@ def e():
 
 # 4-6 start
 def f():
-    words = ''
     num = 0
     last_spell_relay = []
     abcd = True
@@ -121,14 +120,15 @@ def f():
             break
         last_spell_relay.append(words)
         if len(last_spell_relay) > 1:
-            if last_spell_relay[num][-1] == words[0]:
-                print(f'{num+1}번째 사람이 탈락했습니다.')
+            if last_spell_relay[num][-1] != words[0]:
+                print(f'{num+2}번째 사람이 탈락했습니다.')
                 abcd = False
+                break
             for i in range(num):
                 if words == last_spell_relay[i]:
-                    print(f'{num+1}번째 사람이 탈락했습니다.')
+                    print(f'{num+2}번째 사람이 탈락했습니다.')
                     abcd = False
-        num += 1
+            num += 1
 #f()
 # 4-6 end
 
@@ -136,10 +136,42 @@ def f():
 def g():
     from collections import defaultdict
     words = ['eat', 'tea', 'tan', 'ate', 'nat', 'bat']
-    result = defaultdict(list)
+
+    # 구글의 손길
+    # result = defaultdict(list)
+    # for i in words:
+    #     result[''.join((sorted(list(i))))].append(i)
+    #     print(result)
+    # print(result.values())
+
+    # 나의 손길
+    a = []
     for i in words:
-        result[''.join((sorted(list(i))))].append(i)
-        print(result)
-    print(result.values()) 
+        split_words = []
+        for j in range(3):
+            split_words.append(i[j])
+            split_words.sort()
+        a.append([i, split_words])
+    print(a)
+    
+    aet = ['a', 'e', 't']
+    ant = ['a', 'n', 't']
+    abt = ['a', 'b', 't']
+
+    aet2 = []
+    ant2 = []
+    abt2 = []
+    for i in a:
+        if i[1] == aet:
+            aet2.append(i[0])
+        elif i[1] == ant:
+            ant2.append(i[0])
+        elif i[1] == abt:
+            abt2.append(i[0])
+    
+    print(aet2)
+    print(ant2)
+    print(abt2)
+    #print(a)
 g()
 # 4-7 end

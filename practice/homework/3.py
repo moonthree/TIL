@@ -112,7 +112,7 @@ def e():
     mix_per = sum(salt)/sum(salt_water)*100
 
     print(f'소금물의 퍼센트 농도는 {round(mix_per, 2)}%, 소금물의 양은 {round(mix_water, 2)}g 입니다.')
-e()
+#e()
 # 3-5 end
 
 # 3-6 start
@@ -134,14 +134,14 @@ def g():
     c = int(s_triangle1[2])
 
     tri = ""
-    if a==b==c:
+    if a + b <= c:
+        tri = '삼각형이 아님'
+    elif a==b==c:
         tri = '정삼각형'
     elif a==b or b==c:
         tri = '이등변삼각형'
     elif a**2 + b**2 == c**2:
         tri = '직각삼각형'
-    elif a + b <= c:
-        tri = '삼각형이 아님'
     else:
         tri = '삼각형'
     print(tri)
@@ -153,4 +153,4 @@ def g():
 # d()
 # e()
 # f()
-# g()
+g()
