@@ -1,6 +1,5 @@
-i = int(input("숫자를 입력하시오 : " ))
-k = 0
-for a in range(1,i+1):
-    k = k + a
+print('apple'.find('p')) # 1
+# 첫번째 p를 찾아 index 반환
 
-print(k)
+print('apple'.find('k')) # -1
+# k가 없어서 -1을 반환 (오류가 안남)

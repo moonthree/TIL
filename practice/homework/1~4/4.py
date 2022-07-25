@@ -66,7 +66,7 @@ def d():
     a = list(word1)
     b = list(word2)
     a_sum = 0
-    b_sum = 0
+    b_sum = 0,
 
     for i in range(len(a)):
         a_sum += ord(a[i])
