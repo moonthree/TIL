@@ -16,9 +16,9 @@ class Doggy:
     def bark(self):
         return f'{self.species} {self.name}가 짖었다. 효과는 굉장했다.'
 
-    def death(self):
+    # 소멸자
+    def __del__(self):
         Doggy.nums_of_dogs -= 1
-        return '개가 갔습니다..'
 
     def get_status(self):
         return f'태어난 개 : {Doggy.birth_of_dogs}마리, 현재 있는 개 : {Doggy.nums_of_dogs}마리'
@@ -28,6 +28,6 @@ dog1 = Doggy('골드', '골든 리트리버')
 dog2 = Doggy('허슼', '허스키')
 dog3 = Doggy('황구', '시고르자브종')
 
-dog2.death()
+del dog2
 print(dog3.bark())
 print(dog3.get_status())
