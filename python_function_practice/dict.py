@@ -2,29 +2,29 @@
 # def a() : 기초
 def a():
     dict_a = {'key1':'item1', 'key2':'item2'}
-    print(dict_a) # {'key1': 'item1', 'key2': 'item2'}
+    print(dict_a)           # {'key1': 'item1', 'key2': 'item2'}
 
-    print(dict_a['key2']) # item2
+    print(dict_a['key2'])   # item2
 
-    print(dict_a.keys())  # dict_keys(['key1', 'key2'])
+    print(dict_a.keys())    # dict_keys(['key1', 'key2'])
     
     a = list(map(str, dict_a.keys()))
-    print(a)        # ['key1', 'key2']
-    print(a[0])     # key1
-    print(a[1])     # key2
+    print(a)                # ['key1', 'key2']
+    print(a[0])             # key1
+    print(a[1])             # key2
     
     b = list(map(str, dict_a.values()))
-    print(b)        # ['item1', 'item2']
-    print(b[0])     # item1
-    print(b[1])     # item2
+    print(b)                # ['item1', 'item2']
+    print(b[0])             # item1
+    print(b[1])             # item2
 
     c = list(map(str, dict_a.items()))
-    print(c)        # ["('key1', 'item1')", "('key2', 'item2')"]
-    print(c[0])     # ('key1', 'item1')
-    print(c[1])     # ('key2', 'item2')
-    print(type(c[0]))  # <class 'str'>
+    print(c)                # ["('key1', 'item1')", "('key2', 'item2')"]
+    print(c[0])             # ('key1', 'item1')
+    print(c[1])             # ('key2', 'item2')
+    print(type(c[0]))       # <class 'str'>
 
-    print(type(dict_a)) # <class 'dict'>
+    print(type(dict_a))     # <class 'dict'>
 #a()
 
 # def b() : 딕셔너리의 키에 대한 반복 추출

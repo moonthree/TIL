@@ -152,7 +152,7 @@ def g():
             split_words.append(i[j])
             split_words.sort()
         a.append([i, split_words])
-    print(a)
+    #print(a)
     
     aet = ['a', 'e', 't']
     ant = ['a', 'n', 't']
