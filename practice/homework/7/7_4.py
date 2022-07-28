@@ -1,5 +1,4 @@
-from cgitb import reset
-from unittest import result
+import math
 
 
 class Fee():
@@ -10,12 +9,12 @@ class Fee():
 
     # 렌탈 비용 계산
     def get_total_rental(self):
-        return self.time * 1200
+        return self.time//10 * 1200
 
 
     # 보험료 계산
     def get_total_insurance(self):
-        return int(self.time//30 + 1) * 525
+        return math.ceil(self.time/30) * 525
 
     
     # 주행 요금 계산
@@ -25,14 +24,14 @@ class Fee():
             result += 100*170
             result += (self.distance-100) * 85
         else:
-            result = self.distance*100
+            result = self.distance*170
 
         return result
         
         
 
     def get_fee(self):
-        result = self.get_total_rental() + self.get_total_insurance() + self.get_total_drive()
+        result = int(self.get_total_rental() + self.get_total_insurance() + self.get_total_drive())
         return result
 
 

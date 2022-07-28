@@ -26,13 +26,13 @@ class collatz():
     # 짝수 계산    
     def even_n(self):
         self.number = self.number / 2
-        collatz.cnt += 1
+        
         return self.number
     
     # 홀수 계산
     def odd_n(self):
         self.number = self.number * 3 +1
-        collatz.cnt += 1
+        
         return self.number
 
     # 판단
@@ -44,6 +44,7 @@ class collatz():
                 collatz.even_n(self)
             else:
                 collatz.odd_n(self)
+            collatz.cnt += 1
         return collatz.cnt
 
 if __name__ == '__main__':

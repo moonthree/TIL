@@ -19,9 +19,10 @@ class Doggy:
     # 소멸자
     def __del__(self):
         Doggy.nums_of_dogs -= 1
-
-    def get_status(self):
-        return f'태어난 개 : {Doggy.birth_of_dogs}마리, 현재 있는 개 : {Doggy.nums_of_dogs}마리'
+    
+    @classmethod
+    def get_status():
+        return f'태어난 개 : {cls.birth_of_dogs}마리, 현재 있는 개 : {cls.nums_of_dogs}마리'
 
     
 dog1 = Doggy('골드', '골든 리트리버')
@@ -30,4 +31,4 @@ dog3 = Doggy('황구', '시고르자브종')
 
 del dog2
 print(dog3.bark())
-print(dog3.get_status())
+print(Doggy.get_status())

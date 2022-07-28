@@ -4,10 +4,12 @@ class Person:
         self.age = age
 
     @classmethod
-    def details(self, name, year):
-        self.name = name
-        self.year = year
-        self.age = 2022 - self.year
+    def details(cls, name, year):
+        age = 2022 - year + 1
+        return cls(name, age)
+    
+    def get_info(self):
+        print(f'이름 : {self.name} / 나이 : {self.age}')
 
     def check_age(self):
         if self.age > 19:
@@ -17,8 +19,9 @@ class Person:
 
 
 person1 = Person('아이유', 20)
-person2 = Person.details('이찬혁', 17)
+person2 = Person.details('이찬혁', 2004)
 
+person1.get_info()
+person2.get_info()
 print(person1.check_age())
-
-    
+print(person2.check_age())
