@@ -21,7 +21,7 @@ class Doggy:
         Doggy.nums_of_dogs -= 1
     
     @classmethod
-    def get_status():
+    def get_status(cls):
         return f'태어난 개 : {cls.birth_of_dogs}마리, 현재 있는 개 : {cls.nums_of_dogs}마리'
 
     
