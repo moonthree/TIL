@@ -10,5 +10,6 @@ while n < 5:
         break
     else:
         n += 1
+    print(a)
 
 print(mass_percent.salt_water(a))
