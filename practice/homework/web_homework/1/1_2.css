@@ -1,0 +1,9 @@
+#hphk > p:nth-child(2) {
+  color: blue;
+}
+#hphk > h2:nth-child(1) {
+  color: blue;
+}
+#hphk > p:nth-of-type(2){
+  color: red;
+}
