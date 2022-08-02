@@ -1,0 +1,81 @@
+body{
+  margin: 0px;
+}
+header{
+  height: 600px;
+  padding: 20px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.73), rgba(25, 28, 44, 0.52), rgba(0, 0, 0, 0.73)),
+  url('header.jpg');;
+  background-size: cover;
+  margin: 0px;
+}
+/* header 로고, 버튼 */
+
+svg{
+  fill: #e50914;
+  width: 100px;
+}
+#btn_header{
+  float: right;
+}
+#btn_header > button{
+  width: 90px;
+  height: 40px;
+  border-radius: 5px;
+  margin: 0px 10px;
+}
+.btn_language{
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+  opacity: 0.7;
+}
+.btn_login{
+  background-color: red;
+  border: none;
+  color: white;
+}
+
+/* header 텍스트 */
+#text_header{
+  color: white;
+  width: 500px;
+  margin: auto;
+  margin-top: 150px;
+  text-align: center;
+}
+
+
+#email_header{
+  text-align: center;
+  margin: auto;
+  padding: auto;
+}
+#email{
+  width: 300px;
+  height: 50px;
+  border: none;
+}
+#email_btn{
+  width: 150px;
+  height: 52px;
+  border: none;
+  position: relative;
+  right: 5px;
+  top: 3px;
+  background-color: red;
+  color: white;
+  font-size: larger;
+  font-weight: bold;
+}
+
+hr{
+  margin: 0px;
+  height: 4px;
+  background-color: gray;
+}
+
+section{
+  background-color: black;
+  height: 800px;
+}

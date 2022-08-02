@@ -44,11 +44,11 @@ img{
 /* 룩과 킹을 캐슬링 */
 #white_king{
   bottom: 100px;
-  left: 500px;
+  left: 600px;
 }
 #white_rook{
   bottom: 100px;
-  left: 200px;
+  left: 300px;
 }
 
 /* 퀸으로 폰 잡기 */
