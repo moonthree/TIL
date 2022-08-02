@@ -1,0 +1,61 @@
+body{
+  width: 800px;
+  height: 800px;
+  font-size: 0px;
+  border: 1px solid black;
+}
+.left{
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin-left: 100px;
+  background-color: black;
+}
+.right{
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin-right: 100px;
+  background-color: black;
+}
+img{
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+/* 초기 위치 */
+#black_pawn{
+  bottom: 400px;
+}
+#white_king{
+  bottom: 100px;
+  left: 300px;
+}
+#white_queen{
+  bottom: 100px;
+  left: 100px;
+}
+#white_rook{
+  bottom: 100px;
+  left: 400px;
+}
+
+/* 룩과 킹을 캐슬링 */
+#white_king{
+  bottom: 100px;
+  left: 500px;
+}
+#white_rook{
+  bottom: 100px;
+  left: 200px;
+}
+
+/* 퀸으로 폰 잡기 */
+#white_queen{
+  bottom: 400px;
+  left: -100px;
+}
+#black_pawn{
+  display: none;
+}
