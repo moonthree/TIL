@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      border-radius: 20px;
+    }
+    .yellow{
+      display: flex;
+      height: 1000px;
+      border: 20px solid yellow;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .blue{
+      display: flex;
+      height: 70%;
+      width: 10%;
+      flex-direction: column;
+      border: 10px solid blue;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .blue-reverse{
+      flex-direction: column-reverse;
+    }
+    .red{
+      height: 5%;
+      width: 70%;
+      border: 5px solid red;
+      font-size: 10px;
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="yellow">
+    <div class="blue">
+      <div class="red">1</div>
+      <div class="red">2</div>
+      <div class="red">3</div>
+      <div class="red">4</div>
+    </div>
+    <div class="blue blue-reverse">
+      <div class="red">1</div>
+      <div class="red">2</div>
+      <div class="red">3</div>
+      <div class="red">4</div>
+    </div>
+    <div class="blue">
+      <div class="red">1</div>
+      <div class="red">2</div>
+      <div class="red">3</div>
+      <div class="red">4</div>
+    </div>
+    <div class="blue">
+      <div class="red">1</div>
+      <div class="red">2</div>
+      <div class="red">3</div>
+      <div class="red">4</div>
+    </div>
+  </div>
+</body>
+</html>

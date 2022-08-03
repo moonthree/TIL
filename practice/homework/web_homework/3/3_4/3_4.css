@@ -1,0 +1,39 @@
+.card-img-overlay > div{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.card-title{
+  font-weight: bold;
+}
+.card-img-overlay > div > button{
+  background-color: skyblue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin: 10px 0px 0px 0px;
+}
+section > h1{
+  text-align: center;
+  margin-top: 5rem;
+  font-weight: bold;
+}
+.card-group > .card{
+  border: none !important;
+  padding: 3rem;
+}
+P.card-text{
+  text-align: center;
+}
+
+footer{
+  height: 100px;
+  background-color: blue;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

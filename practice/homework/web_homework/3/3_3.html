@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+  <link rel="stylesheet" href="3_3.css">
+</head>
+<body>
+  <!-- css grid practice -->
+  <div class="wrapper">
+    <div class="grid_two">
+      <!-- invalid 경고 -->
+      <div id="invalid_warn">
+        Invalid Login or password.
+      </div>
+      <h1>HPHK 전용 Gitlab 시스템</h1>
+      <hr>
+      <!-- 로그인 상자 -->
+      <div id="login_box">
+        <div class="login_top">
+          Sign in
+        </div>
+        <div class="login_middle">
+          <!-- 아이디, 비번-->
+          <div>
+            <label for="input_id">Username or Email</label>
+            <input type="text" id="input_id" class="login_input">
+          </div>
+          <div>
+            <label for="input_pw">Password</label>
+            <input type="password" id="input_pw" class="login_input">
+          </div>
+          <!-- 체크박스, 비번 찾기 -->
+          <div class="login_check">
+            <div>
+              <input type="checkbox" name="" id="">
+              Remember me
+            </div>
+            <div class="pw_forgot">
+              <a href="#">Forgot your password?</a>
+            </div>
+          </div>
+          <!-- 버튼 -->
+          <div class="submit_btn">
+            <button type="submit">Sign in</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

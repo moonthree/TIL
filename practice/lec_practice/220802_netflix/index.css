@@ -15,8 +15,9 @@ svg{
   fill: #e50914;
   width: 100px;
 }
-#btn_header{
-  float: right;
+nav{
+    display: flex;
+    justify-content: space-between;
 }
 #btn_header > button{
   width: 90px;
