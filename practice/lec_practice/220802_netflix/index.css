@@ -9,8 +9,8 @@ header{
   background-size: cover;
   margin: 0px;
 }
-/* header 로고, 버튼 */
 
+/* header 로고, 버튼 */
 svg{
   fill: #e50914;
   width: 100px;
@@ -29,6 +29,11 @@ svg{
   border: 1px solid white;
   color: white;
   opacity: 0.7;
+  /* width: 90px;
+  height: 40px;
+  border-radius: 5px;
+  margin: 0px 10px;
+  text-align: center; */
 }
 .btn_login{
   background-color: red;
@@ -36,7 +41,7 @@ svg{
   color: white;
 }
 
-/* header 텍스트 */
+/* header 텍스트, 이메일 */
 #text_header{
   color: white;
   width: 500px;
@@ -44,8 +49,6 @@ svg{
   margin-top: 150px;
   text-align: center;
 }
-
-
 #email_header{
   text-align: center;
   margin: auto;
