@@ -9,12 +9,23 @@
 </head>
 <body>
   
-  <div class="alert-box" id="alert">알림창임</div>
-  <button onclick="alert_box()">버튼</button>
+  <button id="close">닫기 버튼</button>
+  <button onclick="alertBox('block', '아이디입력하세요')">아이디 버튼</button>
+  <button onclick="alertBox('block', '비번입력하세요')">비번 버튼</button>
+
+  <div class="alert-box title1" id="alert">알림창임</div>
   
   <script>
-    function alert_box(){
-      document.getElementById('alert').style.display = 'block';
+    document.getElementById('close').addEventListener();
+
+    // function alertBox(parameter, idpw){
+    //   document.getElementById('alert').innerHTML = idpw
+    //   document.getElementById('alert').style.display = parameter;
+    // }
+
+    function alertBox(parameter, idpw){
+      document.getElementsByClassName('title1')[0].innerHTML = '아이디입력하셈'
+      document.getElementById('alert').style.display = parameter;
     }
   </script>
 </body>
