@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>369게임</h1>
+  <input type="number" name="" id="num">
+  <button id="btn">제출</button>
+
+  <script>
+    function three(n){
+      if (n % 3){
+        console.log('통과')
+      }else{
+        if (n % 9 == 0){
+          console.log('박수박수')
+        }else{
+          console.log('박수')
+        }
+      }
+    }
+    document.querySelector('#btn').addEventListener('click', function(){
+      var num = document.getElementById('num').value;
+      console.log(num)
+      three(num)
+    });
+  </script>
+</body>
+</html>

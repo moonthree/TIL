@@ -16,12 +16,12 @@
       <h4>로그인하세요</h4>
       <form action="success.html">
         <div class="my-3">
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" id="id">
         </div>
         <div class="my-3">
-          <input type="password" class="form-control">
+          <input type="password" class="form-control" id="pw">
         </div>
-        <button type="submit" class="btn btn-primary">전송</button>
+        <button type="submit" class="btn btn-primary" id="formSubmit">전송</button>
         <button type="button" class="btn btn-danger" id="close">닫기</button>
       </form>
     </div>
@@ -53,19 +53,41 @@
     document.getElementsByClassName('navbar-toggler')[0].addEventListener('click', function(){
       document.getElementsByClassName('list-group')[0].classList.toggle('show');
     });
-  
     document.querySelector('#loginBtn').addEventListener('click', function(){
       document.querySelectorAll('.black-bg')[0].classList.toggle('show-modal');
     });
     document.querySelector('#close').addEventListener('click', function(){
       document.querySelectorAll('.black-bg')[0].classList.toggle('show-modal');
     });
+    document.querySelector('#formSubmit').addEventListener('click', function(e){
+      var id = document.getElementById('id').value;
+      var pw = document.getElementById('pw').value;
 
+      if (id == ''){
+        alert('아이디 입력하셈')
+        e.preventDefault()
+      }
+      else if (pw == ''){
+        alert('비번 입력하셈')
+        e.preventDefault()
+      }
+      else if (pw.length <= 6){
+        alert('비번 길게 입력하셈')
+        e.preventDefault()
+      }
+      else{
+        alert('ok')
+      }
+    });
+    document.getElementById('id').addEventListener('change', function(){
+      console.log('aa')
+    });
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous">
+  </script>
 
 </body>
 </html>
