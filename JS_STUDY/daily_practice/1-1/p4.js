@@ -29,6 +29,27 @@ const playGame = (p1_choice, p2_choice) => {
 for (let i = 0; i < 10 ; i++) {
   playGame(p1[i], p2[i])
 }
+console.log('--------------------')
+
+const playGame2 = (p1_choice, p2_choice) => {
+  switch (true) {
+    case (p1_choice === 'rock' && p2_choice === 'paper'): {
+      return 2
+    }
+    case (p1_choice === 'scissors' && p2_choice === 'rock'): {
+      return 2
+    }
+    case (p1_choice === p2_choice): {
+      return 0
+    }
+    default: {
+      return 1
+    }
+  }
+}
+for (let i = 0; i < 10 ; i++) {
+  console.log(playGame2(p1[i], p2[i]))
+}
 
 // 2
 // 0

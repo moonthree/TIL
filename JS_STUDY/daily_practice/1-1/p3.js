@@ -404,3 +404,16 @@ for (let i = 0 ; i < movieInfo.results.length ; i++){
     console.log(movieInfo.results[i].title)
   }
 }
+
+
+movieInfo.results.forEach((element) => {
+  if (element.vote_average >= 8) {
+    console.log(element.title)
+  }
+})
+console.log('-------')
+const abc = movieInfo.results.filter((element) => {
+  if (element.vote_average >= 8) {
+    console.log(element.title)
+  }
+})
