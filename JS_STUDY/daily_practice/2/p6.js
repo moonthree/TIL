@@ -10,3 +10,17 @@ for (let i = 0; i < 5; i++) {
   }
   console.log()
 }
+
+for (let i = 0; i < 5; i++) {
+  let star = ''
+  for (let j = 0; j < 4-i; j++) {
+    star += ' '
+  }
+  for (let j = 0; j <= i; j++) {
+    star += '*'
+  }
+  for (let j = 0; j < i; j++) {
+    star += '*'
+  }
+  console.log(star)
+}
