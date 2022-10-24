@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="alert_button()">Alert 버튼</button>
+  <button onclick="change_text()">아래 글씨가 바뀝니다.</button>
+  <p id="text">안녕하세용</p>
+
+  <button onclick="change_text_class()">아래 글씨가 한 번에 바뀝니다.</button>
+  <button onclick="change_text_class2()">아래 글씨가 하나씩 바뀝니다.</button>
+  <p class="text_class">안녕하세용용</p>
+  <p class="text_class">안녕하세용용</p>
+  <p class="text_class">안녕하세용용</p>
+
+  <script>
+    let cnt = 0
+    function alert_button(){
+      alert('hi~~')
+    }
+    const change_text = () => {
+      document.getElementById('text').innerText = '안뇽'
+    }
+
+    let classLength = document.getElementsByClassName('text_class').length
+    const change_text_class = () => {
+      for (let i = 0; i<classLength; i++) {
+        document.getElementsByClassName('text_class')[i].innerText = '안뇽뇽'
+      }
+    }
+    
+    let change_text_class2 = () => {
+      document.getElementsByClassName('text_class')[cnt++].innerText = '안뇽뇽'
+      if (cnt == classLength) {
+        cnt = 0
+      }
+    }
+
+    console.log(document.getElementsByClassName('text_class'))
+
+  </script>
+</body>
+</html>

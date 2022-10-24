@@ -4,4 +4,4 @@ numbers.forEach((a, b, c) => {
   console.log('element : ', a);
   console.log('index : ', b)
   console.log('array : ', c)
-});
+}); 
