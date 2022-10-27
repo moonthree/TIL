@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>인기영화들</h1>
+  
+  <ul></ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    const KEY = ''
+    const API_URI = `https://api.themoviedb.org/3/movie/popular?api_key=${KEY}`
+    const ul = document.querySelector('ul')
+    function getMovie () {
+      axios({
+        method : 'GET',
+        url : API_URI,
+      })
+        .then((response) => {
+          let list = []
+          response.data.results.forEach((element) => {
+            if (element.vote_average > 7) {
+              list.push(element.title)
+            }
+          })
+          return list
+        })
+        .then((response) => {
+          response.forEach((element) => {
+            const li = document.createElement('li')
+            li.innerText = element
+            ul.appendChild(li)
+          })
+        })
+        .catch((error) => { 
+          console.log(error)
+        })
+    }
+
+    getMovie()
+  </script>
+</body>
+</html>
