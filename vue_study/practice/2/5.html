@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      font-family: 'Noto Sans KR', sans-serif;
+      color: rgb(38, 38, 38);
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 500px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: #50B8E7;
+    }
+
+    .buttonArea {
+      margin: 0 auto;
+      width: 80%;
+    }
+
+    .buttonRow {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      height: 80px;
+    }
+
+    .btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 45%;
+      border: 1px solid #50B8E7;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 10px;
+      outline: none;
+      background: none;
+      border: 1px solid #50B8E7;
+      width: 100px;
+      height: 50px;
+      cursor: pointer;
+      font-size: large;
+    }
+
+    .result:hover {
+      background-color: #B9E2F5;
+    }
+
+    .type {
+      font-size: x-large;
+      font-weight: bold;
+    }
+
+    .selected {
+      background-color: #B9E2F5;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="container">
+      <h1>MBTI 검사기</h1>
+      <section class="buttonArea">
+        <div class="buttonRow">
+          <div class="btn" v-bind:class="{selected: EI[0].isSelected}" @click="select(EI, 0)">
+            <span class="type">E</span>
+            <span>외향형</span>
+          </div>
+          <div class="btn" v-bind:class="{selected: EI[1].isSelected}" @click="select(EI, 1)">
+            <span class="type">I</span>
+            <span>내향형</span>
+          </div>
+        </div>
+        <div class="buttonRow">
+          <div class="btn" v-bind:class="{selected: SN[0].isSelected}" @click="select(SN, 0)">
+            <span class="type">S</span>
+            <span>감각형</span>
+          </div>
+          <div class="btn" v-bind:class="{selected: SN[1].isSelected}" @click="select(SN, 1)">
+            <span class="type">N</span>
+            <span>직관형</span>
+          </div>
+        </div>
+        <div class="buttonRow">
+          <div class="btn" v-bind:class="{selected: TF[0].isSelected}" @click="select(TF, 0)">
+            <span class="type">T</span>
+            <span>사고형</span>
+          </div>
+          <div class="btn" v-bind:class="{selected: TF[1].isSelected}" @click="select(TF, 1)">
+            <span class="type">F</span>
+            <span>감정형</span>
+          </div>
+        </div>
+        <div class="buttonRow">
+          <div class="btn" v-bind:class="{selected: JP[0].isSelected}" @click="select(JP, 0)">
+            <span class="type">J</span>
+            <span>판단형</span>
+          </div>
+          <div class="btn" v-bind:class="{selected: JP[1].isSelected}" @click="select(JP, 1)">
+            <span class="type">P</span>
+            <span>인식형</span>
+          </div>
+        </div>
+      </section>
+      <button class="result" @click="result">결과 보기</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        EI: [
+          {type: 'E', isSelected: false},
+          {type: 'I', isSelected: false},
+        ],
+        SN: [
+          {type: 'S', isSelected: false},
+          {type: 'N', isSelected: false},
+        ],
+        TF: [
+          {type: 'T', isSelected: false},
+          {type: 'F', isSelected: false},
+        ],
+        JP: [
+          {type: 'J', isSelected: false},
+          {type: 'P', isSelected: false},
+        ],
+        URL: 'https://www.16personalities.com/ko/%EC%84%B1%EA%B2%A9%EC%9C%A0%ED%98%95-',
+      },
+      methods: {
+        select(item, idx) {
+          item.forEach((el) => {
+            el.isSelected = false
+          })
+          item[idx].isSelected = !item[idx].isSelected
+        },
+        result() {
+          let mbti = ''
+          let cnt = 0
+          this.EI.forEach((e) => {
+            if (e.isSelected === true) {
+              cnt += 1
+              mbti += e.type
+            }
+          })
+          this.SN.forEach((e) => {
+            if (e.isSelected === true) {
+              cnt += 1
+              mbti += e.type
+            }
+          })
+          this.TF.forEach((e) => {
+            if (e.isSelected === true) {
+              cnt += 1
+              mbti += e.type
+            }
+          })
+          this.JP.forEach((e) => {
+            if (e.isSelected === true) {
+              cnt += 1
+              mbti += e.type
+            }
+          })
+          if (cnt !== 4) {
+            alert('wqdqw')
+            return
+          }
+          window.location.href=this.URL + mbti;
+        }
+      }
+    })
+  </script>
+</body>
+</html>

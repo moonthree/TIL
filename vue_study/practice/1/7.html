@@ -15,6 +15,7 @@
     <input v-model='secondMM' type="text">
 
     <h2>합산 입력 : {{ firstMM + secondMM }}</h2>
+    <h2>computed 합산 : {{ combineWord }}</h2>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -24,12 +25,16 @@
       data: {
         firstMM: '',
         secondMM: '',
-        thirdMM: ''
       },
       methods: {
         inputChange: function (e) {
           this.firstMM = e.target.value
         },
+      },
+      computed: {
+        combineWord() {
+          return this.firstMM + this.secondMM
+        }
       }
     })
   </script>

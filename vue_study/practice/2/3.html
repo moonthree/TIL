@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .line {
+      text-decoration: line-through;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>Todo List</h1>
+    <input type="text" v-model="message">
+    <button @click="makeTodo">+</button>
+    <ul>
+      <li
+        v-for="todo in todos"
+        :key="todo.id"
+        v-bind:class="{ line: todo.isChecked }"
+      >
+        <input type="checkbox" @click="check(todo)"/>
+        {{ todo.todo }}
+      </li>
+    </ul>
+    <button @click="del">완료 목록 삭제</button>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: '',
+        todos: [],
+        id: 0
+      },
+      methods: {
+        makeTodo() {
+          console.log(this.todos.length)
+          this.todos.push({todo: this.message, id:this.id, isChecked: false})
+          this.message = ''
+          this.id += 1
+        },
+        check(todo) {
+          todo.isChecked = !todo.isChecked
+        },
+        del() {
+          this.todos.forEach((el, idx) => {
+            console.log(el)
+            if (el.isChecked === true) {
+              this.todos.splice(idx, 1)
+            }
+          })
+        }
+      }
+    })
+  </script>
+</body>
+</html>

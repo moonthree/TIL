@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <div v-for="num in oddNum" :key="num">
+      <p>{{ num }}</p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        nums : [1, 2, 3, 4, 5, 6],
+        URL: 'https://www.16personalities.com/ko/%EC%84%B1%EA%B2%A9%EC%9C%A0%ED%98%95-',
+      },
+      computed: {
+        oddNum() {
+          return this.nums.filter((num) => {
+            return num % 2 !== 0
+          })
+        }
+      }
+    })
+  </script>
+</body>
+</html>

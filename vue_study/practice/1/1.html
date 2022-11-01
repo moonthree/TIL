@@ -10,9 +10,14 @@
   <div id="app">
     <h1>Popular Movies</h1>
     <div>
-      <li v-for="value in movieinfo.results.filter((el) => el.vote_average >= 8)" :key="value.id">
+      <!-- <li v-for="value in movieinfo.results.filter((el) => el.vote_average >= 8)" :key="value.id">
         {{ value.title }}
-      </li>
+      </li> -->
+      <ul v-for="movie in movieinfo.results" :key="movie.id">
+        <li v-if="movie.vote_average >= 8">
+          {{ movie.title }}
+        </li>
+      </ul>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
