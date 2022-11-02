@@ -4,9 +4,11 @@ function solution(s)
     while (1) {
         let flag = 0
         let newWordArr = ''
-        for (let i = 1; i < wordArr.length; i++) {
-            if (wordArr[0] !== wordArr[1]) {
+        for (let i =1; i < wordArr.length; i++) {
+            if (i === 1) {
+              if (wordArr[0] !== wordArr[1]) {
                 newWordArr += wordArr[0]
+              }
             }
             if (flag === 0) {
                 if (wordArr[i] === wordArr[i+1]) {
@@ -27,7 +29,7 @@ function solution(s)
             break
         }
     }
-    
+    console.log(wordArr)
 }
 
 solution('baabaa')
