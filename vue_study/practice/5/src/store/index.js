@@ -43,12 +43,30 @@ export default new Vuex.Store({
         selected: false,
       },
     ],
+    optionList: [
+      {
+        type: '샷',
+        price: 500,
+        count: 0,
+      },
+      {
+        type: '아이스크림',
+        price: 1000,
+        count: 0,
+      },
+      {
+        type: '크로플',
+        price: 7500,
+        count: 0,
+      },
+    ]
   },
   getters: {
   },
   mutations: {
-    ADD_ORDER() {
-
+    SHOPPING(state, order) {
+      console.log(order)
+      state.orderList.push(order)
     },
     UPDATE_MENU_LIST() {
 
@@ -75,6 +93,27 @@ export default new Vuex.Store({
         }
         return size
       })
+    },
+    INCREASE(state, optionItem) {
+      state.optionList = state.optionList.map((option) => {
+        if (option === optionItem) {
+          option.count += 1
+        }
+        return option
+      })
+    },
+    DECREASE(state, optionItem) {
+      state.optionList = state.optionList.map((option) => {
+        if (option === optionItem) {
+          if( option.count === 0) {
+            alert('0개임')
+            return
+          } else {
+            option.count -= 1
+          }
+        }
+        return option
+      })
     }
   },
   actions: {
@@ -83,8 +122,40 @@ export default new Vuex.Store({
     },
     updateSizeStatus(context, sizeItem) {
       context.commit('UPDATE_SIZE_STATUS', sizeItem)
+    },
+    shopping(context) {
+      let menu = ''
+      let size = ''
+      this.state.menuList.forEach((el) => {
+        if (el.selected) {
+          menu = el
+        }
+      })
+      this.state.sizeList.forEach((el) => {
+        if (el.selected) {
+          size = el
+        }
+      })
+      if (menu === '' && size === '') {
+        alert('음료와 사이즈를 선택하세요')
+        return
+      } else if (menu === '' ) {
+        alert('음료를 선택하세요')
+        return
+      } else if (size === '' ) {
+        alert('사이즈를 선택하세요')
+        return
+      }
+      let option = this.state.optionList
+      let order = {menu, size, option}
+      context.commit('SHOPPING', order)
+    },
+    increase(context, optionItem) {
+      context.commit('INCREASE', optionItem)
+    },
+    decrease(context, optionItem) {
+      context.commit('DECREASE', optionItem)
     }
-    
   },
   modules: {
   }

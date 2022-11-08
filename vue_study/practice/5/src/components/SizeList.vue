@@ -2,8 +2,8 @@
   <div>
     <h1>2. 사이즈를 고르세요.</h1>
     <SizeListItemVue
-      v-for="size in sizeList"
-      :key="size"
+      v-for="(size, idx) in sizeList"
+      :key="idx"
       :size="size"
     />
   </div>
@@ -24,7 +24,7 @@ export default {
     sizeList() {
       return this.$store.state.sizeList
     }
-  },
+  } ,
 }
 </script>
 

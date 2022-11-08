@@ -8,19 +8,38 @@
       <div class="select-box">
         <SizeListVue/>
       </div>
+      <div class="select-box">
+        <OptionListVue/>
+      </div>
     </div>
+    <div 
+      class="btn"
+      @click="shopping"
+    >
+      장바구니 담기
+    </div>
+    <OrderListVue/>
   </div>
 </template>
 
 <script>
 import MenuListVue from './components/MenuList.vue';
 import SizeListVue from './components/SizeList.vue';
+import OrderListVue from './components/OrderList.vue';
+import OptionListVue from './components/OptionList.vue';
 
 export default {
   name: 'App',
   components: {
     MenuListVue,
-    SizeListVue
+    SizeListVue,
+    OrderListVue,
+    OptionListVue
+  },
+  methods: {
+    shopping() {
+      this.$store.dispatch('shopping')
+    }
   }
 }
 </script>
@@ -51,7 +70,24 @@ ul {
   margin: 20px;
   padding: 20px;
   border-radius: 20px;
-  width: 600px;
+  width: 400px;
   text-align: left;
+}
+.btn {
+  background-color: white;
+  border: 3px solid #43936C;
+  margin: 20px 0px 20px 0px;
+  border-radius: 20px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #43936C;
+}
+.btn:hover{
+  background-color: #43936C;
+  color: white
 }
 </style>
