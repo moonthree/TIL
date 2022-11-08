@@ -15,13 +15,13 @@ export default new Vuex.Store({
       },
       {
         title: '카푸치노',
-        price: 3000,
+        price: 3500,
         selected: false,
         image : "https://source.unsplash.com/featured/?cappuccino"
       },
       {
         title: '마끼아또',
-        price: 3000,
+        price: 4000,
         selected: false,
         image : "https://source.unsplash.com/featured/?macchiato"
       },
@@ -65,8 +65,18 @@ export default new Vuex.Store({
   },
   mutations: {
     SHOPPING(state, order) {
-      console.log(order)
       state.orderList.push(order)
+      console.log(state.orderList)
+      state.optionList.forEach((el) => {
+        el.count = 0
+      })
+      state.sizeList.forEach((el) => {
+        el.selected = false
+      })
+      state.menuList.forEach((el) => {
+        el.selected = false
+      })
+      return state
     },
     UPDATE_MENU_LIST() {
 
@@ -123,7 +133,7 @@ export default new Vuex.Store({
     updateSizeStatus(context, sizeItem) {
       context.commit('UPDATE_SIZE_STATUS', sizeItem)
     },
-    shopping(context) {
+    shopping(context, optionItem) {
       let menu = ''
       let size = ''
       this.state.menuList.forEach((el) => {
@@ -146,8 +156,10 @@ export default new Vuex.Store({
         alert('사이즈를 선택하세요')
         return
       }
-      let option = this.state.optionList
-      let order = {menu, size, option}
+      // const option = this.state.optionList
+      // console.log(option[0])
+      // console.log(optionItem)
+      const order = {menu, size, optionItem}
       context.commit('SHOPPING', order)
     },
     increase(context, optionItem) {

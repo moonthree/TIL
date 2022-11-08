@@ -29,8 +29,12 @@
       totalOrderPrice () {
         let price = 0
         this.$store.state.orderList.forEach((el) => {
+          console.log(el)
           price += el.menu.price
           price += el.size.price
+          el.optionItem.forEach((element)=>{
+            price += element.price * element.count
+          })
         })
         return price
       },

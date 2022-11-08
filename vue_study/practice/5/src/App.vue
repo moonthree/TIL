@@ -38,7 +38,9 @@ export default {
   },
   methods: {
     shopping() {
-      this.$store.dispatch('shopping')
+      //얕은 복사, 깊은 복사
+      const option = JSON.parse(JSON.stringify(this.$store.state.optionList));
+      this.$store.dispatch('shopping', option)
     }
   }
 }
@@ -88,6 +90,7 @@ ul {
 }
 .btn:hover{
   background-color: #43936C;
-  color: white
+  color: white;
+  cursor: pointer;
 }
 </style>

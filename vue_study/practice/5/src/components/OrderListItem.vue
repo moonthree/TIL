@@ -9,9 +9,9 @@
       <div class="order-price">
         <div>가격: {{ totalPrice }}원</div>
         <div>
-          {{ order.option[0].type }} {{order.option[0].count}}회 |
-          {{ order.option[1].type }} {{order.option[1].count}}회 |
-          {{ order.option[2].type }} {{order.option[2].count}}회
+          {{ order.optionItem[0].type }} {{order.optionItem[0].count}}회 |
+          {{ order.optionItem[1].type }} {{order.optionItem[1].count}}회 |
+          {{ order.optionItem[2].type }} {{order.optionItem[2].count}}회
         </div>
       </div>
     </div>
@@ -26,7 +26,13 @@
     },
     computed: {
       totalPrice() {
-        return this.order.menu.price + this.order.size.price
+        let optionTotal = 0
+        this.order.optionItem.forEach((el) => {
+          console.log(el)
+          optionTotal += el.price * el.count
+        })
+
+        return this.order.menu.price + this.order.size.price + optionTotal
       },
     },
   }
