@@ -6,7 +6,7 @@
         v-for="(menu, index) in menuList"
         :key="index"
         :menu="menu"
-      />
+      >{{ menu }}</MenuListItemVue>
     </div>
   </div>
 </template>
