@@ -117,7 +117,6 @@ export default new Vuex.Store({
         if (option === optionItem) {
           if( option.count === 0) {
             alert('0개임')
-            return
           } else {
             option.count -= 1
           }

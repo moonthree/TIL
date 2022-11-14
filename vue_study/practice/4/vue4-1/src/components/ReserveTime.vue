@@ -1,6 +1,6 @@
 <template>
   <div id="reserve-div">
-    <h2>예약 페이지</h2>
+    <h2 class="text-3xl font-bold underline">예약 페이지</h2>
     <h3>시간 선택</h3>
   </div>
 </template>
